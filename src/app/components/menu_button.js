@@ -6,11 +6,13 @@ class MenuButton extends Component {
   }
   render() {
     let url = this.props.link;
+    let class_value = this.props.status
+
     return (
-            <li className={this.props.status}
+            <li
             onClick={() => {
               this.props.onClick(this.props.current);
-            }}><a href={this.props.link}>
+            }}><a href={this.props.link} className={class_value}>
             {this.props.children}</a></li>
             );
   }

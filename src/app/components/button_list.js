@@ -13,26 +13,13 @@ class ButtonList extends Component {
     render() {
         return (
             <div>
-              <nav className="navbar navbar-default navbar-fixed-top">
-              <div className="container-fluid">
-                <div className="navbar-header">
-                  <a className="navbar-brand" href="#">React Tings</a>
-                </div>
-                <div className="collapse navbar-collapse">
-                <ul className="nav navbar-nav">
+                <ul className="topnav">
                   {this.state.buttons.map((obj) =>
                   (<MenuButton link={obj.link} key={obj.title}
                       current={obj.title} status={obj.status}
                       onClick={this.props.setActive}>{obj.title}</MenuButton>)
                   )}
                 </ul>
-                <ul className="nav navbar-nav navbar-right">
-                  <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-                </div>
-              </div>
-            </nav>
             </div>
             );
     }

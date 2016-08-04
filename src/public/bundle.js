@@ -20380,15 +20380,17 @@
 	      var _this2 = this;
 	
 	      var url = this.props.link;
+	      var class_value = this.props.status;
+	
 	      return _react2.default.createElement(
 	        'li',
-	        { className: this.props.status,
+	        {
 	          onClick: function onClick() {
 	            _this2.props.onClick(_this2.props.current);
 	          } },
 	        _react2.default.createElement(
 	          'a',
-	          { href: this.props.link },
+	          { href: this.props.link, className: class_value },
 	          this.props.children
 	        )
 	      );
@@ -20410,7 +20412,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20432,90 +20434,45 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var ButtonList = function (_Component) {
-	  _inherits(ButtonList, _Component);
+	    _inherits(ButtonList, _Component);
 	
-	  function ButtonList(props) {
-	    _classCallCheck(this, ButtonList);
+	    function ButtonList(props) {
+	        _classCallCheck(this, ButtonList);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonList).call(this, props));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonList).call(this, props));
 	
-	    _this.state = { buttons: _this.props.buttons,
-	      test: 'not'
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(ButtonList, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'nav',
-	          { className: 'navbar navbar-default navbar-fixed-top' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'container-fluid' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'navbar-header' },
-	              _react2.default.createElement(
-	                'a',
-	                { className: 'navbar-brand', href: '#' },
-	                'React Tings'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'collapse navbar-collapse' },
-	              _react2.default.createElement(
-	                'ul',
-	                { className: 'nav navbar-nav' },
-	                this.state.buttons.map(function (obj) {
-	                  return _react2.default.createElement(
-	                    _menu_button2.default,
-	                    { link: obj.link, key: obj.title,
-	                      current: obj.title, status: obj.status,
-	                      onClick: _this2.props.setActive },
-	                    obj.title
-	                  );
-	                })
-	              ),
-	              _react2.default.createElement(
-	                'ul',
-	                { className: 'nav navbar-nav navbar-right' },
-	                _react2.default.createElement(
-	                  'li',
-	                  null,
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '#' },
-	                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
-	                    ' Sign Up'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'li',
-	                  null,
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '#' },
-	                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
-	                    ' Login'
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      );
+	        _this.state = { buttons: _this.props.buttons,
+	            test: 'not'
+	        };
+	        return _this;
 	    }
-	  }]);
 	
-	  return ButtonList;
+	    _createClass(ButtonList, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'topnav' },
+	                    this.state.buttons.map(function (obj) {
+	                        return _react2.default.createElement(
+	                            _menu_button2.default,
+	                            { link: obj.link, key: obj.title,
+	                                current: obj.title, status: obj.status,
+	                                onClick: _this2.props.setActive },
+	                            obj.title
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return ButtonList;
 	}(_react.Component);
 	
 	;

@@ -9,26 +9,38 @@
     <meta name="author" content="">
 
     <title>My Page</title>
+    <style>
+body {margin: 0;}
 
-    <!-- Bootstrap core CSS -->
-    <link href="public/dist/css/bootstrap.min.css" rel="stylesheet">
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="public/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+ul.topnav li {float: left;}
 
-    <!-- Custom styles for this template -->
-    <link href="public/jumbotron-narrow.css" rel="stylesheet">
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="public/assets/js/ie-emulation-modes-warning.js"></script>
+ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+ul.topnav li a.active {background-color: #4CAF50;}
 
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+</style>
   </head>
 
   <body>
