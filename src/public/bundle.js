@@ -143,16 +143,7 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(_button_list2.default, { buttons: this.state.buttons, setActive: this.setActive }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'graphic-header' },
-	                    _react2.default.createElement(
-	                        'h1',
-	                        null,
-	                        ' Hello '
-	                    ),
-	                    ' '
-	                ),
+	                _react2.default.createElement('div', { className: 'banner' }),
 	                _react2.default.createElement(_content2.default, { active: this.state.active }),
 	                _react2.default.createElement(
 	                    'h1',

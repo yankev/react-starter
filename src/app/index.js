@@ -59,9 +59,10 @@ class App extends Component {
 render() {
     let text = this.state.txt;
     return ( < div >
-        <
+      <
         ButtonList buttons={this.state.buttons} setActive={this.setActive} / >
-        <div className="graphic-header"><h1> Hello </h1> </div>
+        <div className="banner">
+        </div>
         <
         Content  active={this.state.active} / >
 
@@ -72,7 +73,7 @@ render() {
         onChange = {
             this.update.bind(this)
         }
-        /> 
+        />
 
         < /div>
     );
