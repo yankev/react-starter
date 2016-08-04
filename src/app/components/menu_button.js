@@ -8,7 +8,9 @@ class MenuButton extends Component {
     let url = this.props.link;
     return (
             <li role="presentation" className={this.props.status}
-            onClick={this.props.onClick.bind(this)}><a href={this.props.link}>
+            onClick={() => {
+              this.props.onClick(this.props.current);
+            }}><a href={this.props.link}>
             {this.props.children}</a></li>
             );
   }

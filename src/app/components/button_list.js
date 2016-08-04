@@ -10,22 +10,22 @@ class ButtonList extends Component {
                                 {title: 'Two', route: '#', status: "not"}],
                       test: 'not'
                      };
+        this.setActive = this.setActive.bind(this);
     }
 
-    setActive(element) {
-      let state = this.props.status['buttons'];
-      let key = this.props.current;
-      alert(key);
-      console.log(state);
-      for(let i=0; i<state.length; i++) {
-        if(state[i]['title'] == key) {
-          state[i]['status'] = "active";
-          this.props.status.setState({test: 'working'});
+    setActive(key) {
+      let buttons = (this.state.buttons);
+      for(let i=0; i<buttons.length; i++) {
+        if(buttons[i]['title'] == key) {
+          buttons[i]['status'] = "active";
+          this.setState({buttons: buttons});
+          this.setState({test: 'working'});
         }
         else {
-          state[i]['status'] = "not";
+          buttons[i]['status'] = "not";
         }
       }
+      console.log(this.state.buttons)
     }
 
     render() {
@@ -37,7 +37,7 @@ class ButtonList extends Component {
             <ul className="nav nav-pills pull-right">
             {this.state.buttons.map((obj) =>
                 (<MenuButton link={obj.route} key={obj.title}
-                    current={obj.title} status={this.state}
+                    current={obj.title} status={obj.status}
                     onClick={this.setActive}>{obj.title}</MenuButton>)
             )}
             </ul>
