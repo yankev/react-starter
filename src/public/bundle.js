@@ -145,37 +145,32 @@
 	                _react2.default.createElement(_button_list2.default, { buttons: this.state.buttons, setActive: this.setActive }),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'container' },
+	                    { className: 'graphic-header' },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'row marketing' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'col-lg-12' },
-	                            _react2.default.createElement(_content2.default, { active: this.state.active }),
-	                            _react2.default.createElement(
-	                                'h1',
-	                                null,
-	                                ' ',
-	                                this.state.txt,
-	                                ' '
-	                            ),
-	                            ' ',
-	                            _react2.default.createElement(
-	                                Button,
-	                                null,
-	                                ' Click Me '
-	                            ),
-	                            ' ',
-	                            _react2.default.createElement('input', { type: 'text',
-	                                onChange: this.update.bind(this)
-	                            }),
-	                            ' '
-	                        )
+	                        'h1',
+	                        null,
+	                        ' Hello '
 	                    ),
 	                    ' '
 	                ),
-	                ' '
+	                _react2.default.createElement(_content2.default, { active: this.state.active }),
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    ' ',
+	                    this.state.txt,
+	                    ' '
+	                ),
+	                ' ',
+	                _react2.default.createElement(
+	                    Button,
+	                    null,
+	                    ' Click Me '
+	                ),
+	                ' ',
+	                _react2.default.createElement('input', { type: 'text',
+	                    onChange: this.update.bind(this)
+	                })
 	            );
 	        }
 	    }]);

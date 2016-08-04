@@ -59,15 +59,9 @@ class App extends Component {
 render() {
     let text = this.state.txt;
     return ( < div >
-
         <
         ButtonList buttons={this.state.buttons} setActive={this.setActive} / >
-        <
-        div className = "container" >
-        <
-        div className = "row marketing" >
-        <
-        div className = "col-lg-12" >
+        <div className="graphic-header"><h1> Hello </h1> </div>
         <
         Content  active={this.state.active} / >
 
@@ -78,10 +72,9 @@ render() {
         onChange = {
             this.update.bind(this)
         }
-        /> < /div >
+        /> 
 
-        <
-        /div> < /div > < /div>
+        < /div>
     );
 }
 }
