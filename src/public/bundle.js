@@ -102,7 +102,7 @@
 	                status: "not",
 	                link: "#"
 	            }, {
-	                title: "Two",
+	                title: "Counter",
 	                status: "not",
 	                link: "#"
 	            }],
@@ -144,7 +144,11 @@
 	                null,
 	                _react2.default.createElement(_button_list2.default, { buttons: this.state.buttons, setActive: this.setActive }),
 	                _react2.default.createElement('div', { className: 'banner' }),
-	                _react2.default.createElement(_content2.default, { active: this.state.active }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2.default.createElement(_content2.default, { active: this.state.active })
+	                ),
 	                _react2.default.createElement(
 	                    'h1',
 	                    null,
@@ -161,7 +165,8 @@
 	                ' ',
 	                _react2.default.createElement('input', { type: 'text',
 	                    onChange: this.update.bind(this)
-	                })
+	                }),
+	                _react2.default.createElement('div', { className: 'footer' })
 	            );
 	        }
 	    }]);
@@ -20444,6 +20449,11 @@
 	                _react2.default.createElement(
 	                    'ul',
 	                    { className: 'topnav' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        ' React Tings '
+	                    ),
 	                    this.state.buttons.map(function (obj) {
 	                        return _react2.default.createElement(
 	                            _menu_button2.default,
@@ -20548,7 +20558,7 @@
   \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -20559,6 +20569,10 @@
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _counter = __webpack_require__(/*! ./counter */ 161);
+	
+	var _counter2 = _interopRequireDefault(_counter);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -20578,48 +20592,50 @@
 	  }
 	
 	  _createClass(Content, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      switch (this.props.active) {
 	        case "Home":
 	          return _react2.default.createElement(
-	            "div",
-	            null,
+	            'div',
+	            { className: 'content' },
 	            _react2.default.createElement(
-	              "h4",
+	              'h4',
 	              null,
-	              " Subheading "
+	              ' Subheading '
 	            ),
-	            " ",
+	            ' ',
 	            _react2.default.createElement(
-	              "p",
+	              'p',
 	              null,
-	              " Stuff "
+	              ' Stuff '
 	            ),
 	            _react2.default.createElement(
-	              "h4",
+	              'h4',
 	              null,
-	              " Subheading "
+	              ' Subheading '
 	            ),
-	            " ",
+	            ' ',
 	            _react2.default.createElement(
-	              "p",
+	              'p',
 	              null,
-	              " More stuff "
+	              ' More stuff '
 	            ),
-	            ">"
+	            '>'
 	          );
 	        case "One":
 	          return _react2.default.createElement(
-	            "h4",
+	            'h4',
 	            null,
-	            "fuck yall"
+	            'fuck yall'
 	          );
+	        case "Counter":
+	          return _react2.default.createElement(_counter2.default, null);
 	        default:
 	          return _react2.default.createElement(
-	            "h4",
+	            'h4',
 	            null,
-	            "Default"
+	            'Default'
 	          );
 	      }
 	    }

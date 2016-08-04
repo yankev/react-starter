@@ -14,6 +14,7 @@ class ButtonList extends Component {
         return (
             <div>
                 <ul className="topnav">
+                <h1> React Tings </h1>
                   {this.state.buttons.map((obj) =>
                   (<MenuButton link={obj.link} key={obj.title}
                       current={obj.title} status={obj.status}

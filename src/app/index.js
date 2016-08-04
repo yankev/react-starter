@@ -23,7 +23,7 @@ class App extends Component {
                 link: "#"
             },
             {
-              title: "Two",
+              title: "Counter",
               status: "not",
               link: "#"
             }
@@ -63,9 +63,10 @@ render() {
         ButtonList buttons={this.state.buttons} setActive={this.setActive} / >
         <div className="banner">
         </div>
+        <div className="container">
         <
         Content  active={this.state.active} / >
-
+        </div>
         <
         h1 > {
             this.state.txt
@@ -74,7 +75,7 @@ render() {
             this.update.bind(this)
         }
         />
-
+        <div className="footer"></div>
         < /div>
     );
 }
