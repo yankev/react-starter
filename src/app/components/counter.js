@@ -24,4 +24,4 @@ class Counter extends Component {
 
 }
 
-export default counter;
+export default Counter;

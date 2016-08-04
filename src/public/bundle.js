@@ -67,6 +67,10 @@
 	
 	var _button_list2 = _interopRequireDefault(_button_list);
 	
+	var _counter = __webpack_require__(/*! ./components/counter */ 161);
+	
+	var _counter2 = _interopRequireDefault(_counter);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -76,173 +80,105 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var App = function (_Component) {
-	  _inherits(App, _Component);
+	    _inherits(App, _Component);
 	
-	  function App(props) {
-	    _classCallCheck(this, App);
+	    function App(props) {
+	        _classCallCheck(this, App);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
 	
-	    _this.state = { txt: 'Default Text' };
-	    return _this;
-	  }
-	
-	  _createClass(App, [{
-	    key: 'update',
-	    value: function update(e) {
-	      this.setState({ txt: e.target.value });
+	        _this.state = { txt: 'Default Text' };
+	        return _this;
 	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var text = this.state.txt;
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'header clearfix' },
-	            _react2.default.createElement(
-	              'nav',
-	              null,
-	              _react2.default.createElement(
-	                'ul',
-	                { className: 'nav nav-pills pull-right' },
-	                _react2.default.createElement(
-	                  'li',
-	                  { role: 'presentation', className: 'active' },
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '#' },
-	                    'Home'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'li',
-	                  { role: 'presentation' },
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '/db_stuff' },
-	                    'Filter Form'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'li',
-	                  { role: 'presentation' },
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '/select_all' },
-	                    'Select All'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  'li',
-	                  { role: 'presentation' },
-	                  _react2.default.createElement(
-	                    'a',
-	                    { href: '/input' },
-	                    'Add Form'
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  _menu_button2.default,
-	                  null,
-	                  'chyeah'
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'h3',
-	              { className: 'text-muted' },
-	              'React Tings'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'jumbotron' },
-	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'Welcome to some database interaction test'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              { className: 'lead' },
-	              'Click here to sign up!'
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                { className: 'btn btn-lg btn-success', href: '#', role: 'button' },
-	                'Sign up today'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row marketing' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-lg-12' },
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                'Subheading'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Stuff'
-	              ),
-	              _react2.default.createElement(
-	                'h4',
-	                null,
-	                'Subheading'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'More stuff'
-	              ),
-	              '>'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'footer',
-	            { className: 'footer' },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '© kek'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(_button_list2.default, null),
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          this.state.txt
-	        ),
-	        _react2.default.createElement(
-	          Button,
-	          null,
-	          'Click Me'
-	        ),
-	        _react2.default.createElement('input', { type: 'text', onChange: this.update.bind(this) })
-	      );
-	    }
-	  }]);
 	
-	  return App;
+	    _createClass(App, [{
+	        key: 'update',
+	        value: function update(e) {
+	            this.setState({ txt: e.target.value });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var text = this.state.txt;
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'header clearfix' },
+	                        _react2.default.createElement(_button_list2.default, null),
+	                        _react2.default.createElement(
+	                            'h3',
+	                            { className: 'text-muted' },
+	                            ' React Tings '
+	                        ),
+	                        ' '
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row marketing' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-lg-12' },
+	                            _react2.default.createElement(_counter2.default, null),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                null,
+	                                ' Subheading '
+	                            ),
+	                            ' ',
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' Stuff '
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                null,
+	                                ' Subheading '
+	                            ),
+	                            ' ',
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' More stuff '
+	                            ),
+	                            '>',
+	                            _react2.default.createElement(
+	                                'h1',
+	                                null,
+	                                ' ',
+	                                this.state.txt,
+	                                ' '
+	                            ),
+	                            ' ',
+	                            _react2.default.createElement(
+	                                Button,
+	                                null,
+	                                ' Click Me '
+	                            ),
+	                            ' ',
+	                            _react2.default.createElement('input', { type: 'text',
+	                                onChange: this.update.bind(this)
+	                            }),
+	                            ' '
+	                        )
+	                    ),
+	                    ' '
+	                ),
+	                ' '
+	            );
+	        }
+	    }]);
+	
+	    return App;
 	}(_react.Component);
 	
 	App.PropTypes = {
-	  txt: _react2.default.PropTypes.string
+	    txt: _react2.default.PropTypes.string
 	};
 	
 	// App.defaultProps = {
@@ -250,26 +186,28 @@
 	// }
 	
 	var Button = function (_Component2) {
-	  _inherits(Button, _Component2);
+	    _inherits(Button, _Component2);
 	
-	  function Button() {
-	    _classCallCheck(this, Button);
+	    function Button() {
+	        _classCallCheck(this, Button);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
-	  }
-	
-	  _createClass(Button, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'button',
-	        null,
-	        this.props.children
-	      );
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	    }
-	  }]);
 	
-	  return Button;
+	    _createClass(Button, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'button',
+	                null,
+	                ' ',
+	                this.props.children,
+	                ' '
+	            );
+	        }
+	    }]);
+	
+	    return Button;
 	}(_react.Component);
 	
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
@@ -20433,9 +20371,10 @@
 	  _createClass(MenuButton, [{
 	    key: "render",
 	    value: function render() {
+	      var url = this.props.link;
 	      return _react2.default.createElement(
 	        "li",
-	        { role: "presentation" },
+	        { role: "presentation", onClick: this.props.onClick },
 	        _react2.default.createElement(
 	          "a",
 	          { href: "#" },
@@ -20489,13 +20428,20 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonList).call(this, props));
 	
-	        _this.state = { buttons: ['Home', 'One', 'Two'] };
+	        _this.state = { buttons: [{ title: 'Home', route: '#' }, { title: 'One', route: '#' }, { title: 'Two', route: '#' }]
+	        };
 	        return _this;
 	    }
 	
 	    _createClass(ButtonList, [{
+	        key: 'setActive',
+	        value: function setActive(element) {
+	            alert(element);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -20506,11 +20452,11 @@
 	                    _react2.default.createElement(
 	                        'ul',
 	                        { className: 'nav nav-pills pull-right' },
-	                        this.state.buttons.map(function (title) {
-	                            _react2.default.createElement(
+	                        this.state.buttons.map(function (obj) {
+	                            return _react2.default.createElement(
 	                                _menu_button2.default,
-	                                null,
-	                                title
+	                                { link: obj.id, key: obj.title, onClick: _this2.setActive },
+	                                obj.title
 	                            );
 	                        })
 	                    )
@@ -20525,6 +20471,82 @@
 	;
 	
 	exports.default = ButtonList;
+
+/***/ },
+/* 161 */
+/*!***************************************!*\
+  !*** ./src/app/components/counter.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Counter = function (_Component) {
+	  _inherits(Counter, _Component);
+	
+	  function Counter(props) {
+	    _classCallCheck(this, Counter);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Counter).call(this, props));
+	
+	    _this.state = { likesCount: 0 };
+	    _this.onLike = _this.onLike.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Counter, [{
+	    key: 'onLike',
+	    value: function onLike() {
+	      var newLikesCount = this.state.likesCount + 1;
+	      this.setState({ likesCount: newLikesCount });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'Likes : ',
+	        _react2.default.createElement(
+	          'span',
+	          null,
+	          this.state.likesCount
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.onLike },
+	            'Like Me'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Counter;
+	}(_react.Component);
+	
+	exports.default = Counter;
 
 /***/ }
 /******/ ]);
