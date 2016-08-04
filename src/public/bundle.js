@@ -20374,10 +20374,11 @@
 	      var url = this.props.link;
 	      return _react2.default.createElement(
 	        "li",
-	        { role: "presentation", onClick: this.props.onClick },
+	        { role: "presentation", className: this.props.status,
+	          onClick: this.props.onClick.bind(this) },
 	        _react2.default.createElement(
 	          "a",
-	          { href: "#" },
+	          { href: this.props.link },
 	          this.props.children
 	        )
 	      );
@@ -20399,7 +20400,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20421,51 +20422,72 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var ButtonList = function (_Component) {
-	    _inherits(ButtonList, _Component);
+	  _inherits(ButtonList, _Component);
 	
-	    function ButtonList(props) {
-	        _classCallCheck(this, ButtonList);
+	  function ButtonList(props) {
+	    _classCallCheck(this, ButtonList);
 	
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonList).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ButtonList).call(this, props));
 	
-	        _this.state = { buttons: [{ title: 'Home', route: '#' }, { title: 'One', route: '#' }, { title: 'Two', route: '#' }]
-	        };
-	        return _this;
+	    _this.state = { buttons: [{ title: 'Home', route: '#', status: "active" }, { title: 'One', route: '#', status: "not" }, { title: 'Two', route: '#', status: "not" }],
+	      test: 'not'
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(ButtonList, [{
+	    key: 'setActive',
+	    value: function setActive(element) {
+	      var state = this.props.status['buttons'];
+	      var key = this.props.current;
+	      alert(key);
+	      console.log(state);
+	      for (var i = 0; i < state.length; i++) {
+	        if (state[i]['title'] == key) {
+	          state[i]['status'] = "active";
+	          this.props.status.setState({ test: 'working' });
+	        } else {
+	          state[i]['status'] = "not";
+	        }
+	      }
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
 	
-	    _createClass(ButtonList, [{
-	        key: 'setActive',
-	        value: function setActive(element) {
-	            alert(element);
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          ' Test: ',
+	          this.state.test,
+	          ' '
+	        ),
+	        _react2.default.createElement(
+	          'nav',
+	          null,
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'nav nav-pills pull-right' },
+	            this.state.buttons.map(function (obj) {
+	              return _react2.default.createElement(
+	                _menu_button2.default,
+	                { link: obj.route, key: obj.title,
+	                  current: obj.title, status: _this2.state,
+	                  onClick: _this2.setActive },
+	                obj.title
+	              );
+	            })
+	          )
+	        )
+	      );
+	    }
+	  }]);
 	
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'nav',
-	                    null,
-	                    _react2.default.createElement(
-	                        'ul',
-	                        { className: 'nav nav-pills pull-right' },
-	                        this.state.buttons.map(function (obj) {
-	                            return _react2.default.createElement(
-	                                _menu_button2.default,
-	                                { link: obj.id, key: obj.title, onClick: _this2.setActive },
-	                                obj.title
-	                            );
-	                        })
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return ButtonList;
+	  return ButtonList;
 	}(_react.Component);
 	
 	;

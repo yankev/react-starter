@@ -5,24 +5,40 @@ class ButtonList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {buttons: [{title: 'Home', route: '#'},
-                                {title: 'One', route: '#'},
-                                {title: 'Two', route: '#'}],
+        this.state = {buttons: [{title: 'Home', route: '#', status: "active"},
+                                {title: 'One', route: '#', status: "not"},
+                                {title: 'Two', route: '#', status: "not"}],
+                      test: 'not'
                      };
     }
 
     setActive(element) {
-        alert(element);
+      let state = this.props.status['buttons'];
+      let key = this.props.current;
+      alert(key);
+      console.log(state);
+      for(let i=0; i<state.length; i++) {
+        if(state[i]['title'] == key) {
+          state[i]['status'] = "active";
+          this.props.status.setState({test: 'working'});
+        }
+        else {
+          state[i]['status'] = "not";
+        }
+      }
     }
 
     render() {
 
         return (
             <div>
+            <h1> Test: {this.state.test} </h1>
             <nav>
             <ul className="nav nav-pills pull-right">
             {this.state.buttons.map((obj) =>
-                (<MenuButton link={obj.id} key={obj.title} onClick={this.setActive}>{obj.title}</MenuButton>)
+                (<MenuButton link={obj.route} key={obj.title}
+                    current={obj.title} status={this.state}
+                    onClick={this.setActive}>{obj.title}</MenuButton>)
             )}
             </ul>
             </nav>
