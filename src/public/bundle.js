@@ -101,7 +101,12 @@
 	                title: "One",
 	                status: "not",
 	                link: "#"
-	            }]
+	            }, {
+	                title: "Two",
+	                status: "not",
+	                link: "#"
+	            }],
+	            active: "Home"
 	        };
 	        _this.setActive = _this.setActive.bind(_this);
 	        return _this;
@@ -122,7 +127,8 @@
 	                if (buttons[i]['title'] == key) {
 	                    buttons[i]['status'] = "active";
 	                    this.setState({
-	                        buttons: buttons
+	                        buttons: buttons,
+	                        active: key
 	                    });
 	                } else {
 	                    buttons[i]['status'] = "not";
@@ -147,7 +153,7 @@
 	                            'div',
 	                            { className: 'col-lg-12' },
 	                            _react2.default.createElement(_counter2.default, null),
-	                            _react2.default.createElement(_content2.default, null),
+	                            _react2.default.createElement(_content2.default, { active: this.state.active }),
 	                            _react2.default.createElement(
 	                                'h1',
 	                                null,

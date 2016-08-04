@@ -21,7 +21,14 @@ class App extends Component {
                 title: "One",
                 status: "not",
                 link: "#"
-            }]
+            },
+            {
+              title: "Two",
+              status: "not",
+              link: "#"
+            }
+          ],
+            active: "Home"
         };
         this.setActive = this.setActive.bind(this);
     };
@@ -38,7 +45,8 @@ class App extends Component {
             if (buttons[i]['title'] == key) {
                 buttons[i]['status'] = "active";
                 this.setState({
-                    buttons: buttons
+                    buttons: buttons,
+                    active: key
                 });
             } else {
                 buttons[i]['status'] = "not";
@@ -63,7 +71,7 @@ render() {
         <
         Counter / >
         <
-        Content / >
+        Content  active={this.state.active} / >
 
         <
         h1 > {
