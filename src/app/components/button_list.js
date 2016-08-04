@@ -5,42 +5,31 @@ class ButtonList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {buttons: [{title: 'Home', route: '#', status: "active"},
-                                {title: 'One', route: '#', status: "not"},
-                                {title: 'Two', route: '#', status: "not"}],
+        this.state = {buttons: this.props.buttons,
                       test: 'not'
                      };
-        this.setActive = this.setActive.bind(this);
-    }
-
-    setActive(key) {
-      let buttons = (this.state.buttons);
-      for(let i=0; i<buttons.length; i++) {
-        if(buttons[i]['title'] == key) {
-          buttons[i]['status'] = "active";
-          this.setState({buttons: buttons});
-          this.setState({test: 'working'});
-        }
-        else {
-          buttons[i]['status'] = "not";
-        }
-      }
-      console.log(this.state.buttons)
     }
 
     render() {
-
         return (
             <div>
-            <h1> Test: {this.state.test} </h1>
-            <nav>
-            <ul className="nav nav-pills pull-right">
-            {this.state.buttons.map((obj) =>
-                (<MenuButton link={obj.route} key={obj.title}
-                    current={obj.title} status={obj.status}
-                    onClick={this.setActive}>{obj.title}</MenuButton>)
-            )}
-            </ul>
+              <nav className="navbar navbar-default navbar-fixed-top">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                  <a className="navbar-brand" href="#">React Tings</a>
+                </div>
+                <ul className="nav navbar-nav">
+                  {this.state.buttons.map((obj) =>
+                  (<MenuButton link={obj.link} key={obj.title}
+                      current={obj.title} status={obj.status}
+                      onClick={this.props.setActive}>{obj.title}</MenuButton>)
+                  )}
+                </ul>
+                <ul className="nav navbar-nav navbar-right">
+                  <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </div>
             </nav>
             </div>
             );
