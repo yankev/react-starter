@@ -20463,13 +20463,6 @@
 	              'div',
 	              { className: 'navbar-header' },
 	              _react2.default.createElement(
-	                'button',
-	                { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
-	                _react2.default.createElement('span', { className: 'icon-bar' }),
-	                _react2.default.createElement('span', { className: 'icon-bar' }),
-	                _react2.default.createElement('span', { className: 'icon-bar' })
-	              ),
-	              _react2.default.createElement(
 	                'a',
 	                { className: 'navbar-brand', href: '#' },
 	                'React Tings'
@@ -20477,7 +20470,7 @@
 	            ),
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'collapse navbar-collapse', id: 'myNavbar' },
+	              { className: 'collapse navbar-collapse' },
 	              _react2.default.createElement(
 	                'ul',
 	                { className: 'nav navbar-nav' },
