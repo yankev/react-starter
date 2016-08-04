@@ -16,8 +16,14 @@ class ButtonList extends Component {
               <nav className="navbar navbar-default navbar-fixed-top">
               <div className="container-fluid">
                 <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
                   <a className="navbar-brand" href="#">React Tings</a>
                 </div>
+                <div className="collapse navbar-collapse" id="myNavbar">
                 <ul className="nav navbar-nav">
                   {this.state.buttons.map((obj) =>
                   (<MenuButton link={obj.link} key={obj.title}
@@ -29,6 +35,7 @@ class ButtonList extends Component {
                   <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
                   <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
+                </div>
               </div>
             </nav>
             </div>

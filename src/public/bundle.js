@@ -152,7 +152,6 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'col-lg-12' },
-	                            _react2.default.createElement(_counter2.default, null),
 	                            _react2.default.createElement(_content2.default, { active: this.state.active }),
 	                            _react2.default.createElement(
 	                                'h1',
@@ -20464,45 +20463,56 @@
 	              'div',
 	              { className: 'navbar-header' },
 	              _react2.default.createElement(
+	                'button',
+	                { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
+	                _react2.default.createElement('span', { className: 'icon-bar' }),
+	                _react2.default.createElement('span', { className: 'icon-bar' }),
+	                _react2.default.createElement('span', { className: 'icon-bar' })
+	              ),
+	              _react2.default.createElement(
 	                'a',
 	                { className: 'navbar-brand', href: '#' },
 	                'React Tings'
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'ul',
-	              { className: 'nav navbar-nav' },
-	              this.state.buttons.map(function (obj) {
-	                return _react2.default.createElement(
-	                  _menu_button2.default,
-	                  { link: obj.link, key: obj.title,
-	                    current: obj.title, status: obj.status,
-	                    onClick: _this2.props.setActive },
-	                  obj.title
-	                );
-	              })
-	            ),
-	            _react2.default.createElement(
-	              'ul',
-	              { className: 'nav navbar-nav navbar-right' },
+	              'div',
+	              { className: 'collapse navbar-collapse', id: 'myNavbar' },
 	              _react2.default.createElement(
-	                'li',
-	                null,
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#' },
-	                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
-	                  ' Sign Up'
-	                )
+	                'ul',
+	                { className: 'nav navbar-nav' },
+	                this.state.buttons.map(function (obj) {
+	                  return _react2.default.createElement(
+	                    _menu_button2.default,
+	                    { link: obj.link, key: obj.title,
+	                      current: obj.title, status: obj.status,
+	                      onClick: _this2.props.setActive },
+	                    obj.title
+	                  );
+	                })
 	              ),
 	              _react2.default.createElement(
-	                'li',
-	                null,
+	                'ul',
+	                { className: 'nav navbar-nav navbar-right' },
 	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#' },
-	                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
-	                  ' Login'
+	                  'li',
+	                  null,
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#' },
+	                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-user' }),
+	                    ' Sign Up'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#' },
+	                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-log-in' }),
+	                    ' Login'
+	                  )
 	                )
 	              )
 	            )

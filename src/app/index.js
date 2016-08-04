@@ -69,8 +69,6 @@ render() {
         <
         div className = "col-lg-12" >
         <
-        Counter / >
-        <
         Content  active={this.state.active} / >
 
         <
